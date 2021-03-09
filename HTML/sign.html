@@ -6,6 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
     <link href="/css/site.css" rel="stylesheet" type="text/css">
+
+    <style>
+        #image {
+            width: 200px;
+            height: 200px;
+            margin: 0;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        form {
+            border: 3px solid orange;
+            background-color: #f1f1f1;
+            display: inline-block;
+            top: 70%;
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            padding: 10px;
+        }
+
+        
+    </style>
 </head>
 <body>
     <header>
@@ -18,9 +48,53 @@
         </nav>
     </header>
     <main class="main-page">
-        <div class="">
+        <img src="/images/computer-users.png" id="image">
+        
+        <form class="reg-form"> 
+            <h2>User Registration Page</h2>
+            <div>
+                <div class="first-name">
+                    <label>First Name</label>
+                    <input type="text" placeholder="Enter your first name" name="fname" required>
+                </div>
 
-        </div>
+                <div class="last-name">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Enter your last name" name="lname" required>
+                </div>
+
+                <div class="company-name">
+                    <label>Company Name</label>
+                    <input type="text" placeholder="Enter your organization name" name="company" required>
+                </div>
+
+                <div class="company-address">
+                    <label>Company Address</label>
+                    <input type="text" placeholder="Enter your organization address" name="acompany" required>
+                </div>
+
+                <div class="address">
+                    <label>Home Address</label>
+                    <input type="text" placeholder="Enter your Home Address" name="home" required>
+                </div>
+
+                <div class="phone">
+                    <label>Phone Number</label>
+                    <input type="tel" placeholder="Enter your phone number" name="phone" required>
+                </div>
+
+                <div class="e-mail">
+                    <label>First Name</label>
+                    <input type="email" placeholder="Enter your Email" name="email" required>
+                </div>
+
+                <button type="submit">Register Me!</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember">Remember Me
+                </label>
+                
+            </div>
+        </form>>
     </main>
 
     <footer>
