@@ -13,7 +13,7 @@
             height: 200px;
             margin: 0;
             position: absolute;
-            top: 25%;
+            top: 20%;
             left: 50%;
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -32,8 +32,34 @@
             -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
             padding: 10px;
+            width: 35%;
+            height: 37%;
         }
 
+        .form {
+            display: inline-block;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            margin-right: 12px;      
+        }
+
+        input[type=text], [type=tel], [type=email] {
+            padding: 3px;
+            margin-bottom: 4px;
+            width: 400px;
+            padding: 4px;
+        }
+
+        .butt {
+            font-size: 18px;
+            text-align: center;
+            border: 3px solid papayawhip;
+            margin-top: 10px;
+            background-color: orange;
+        }
         
     </style>
 </head>
@@ -52,7 +78,7 @@
         
         <form class="reg-form"> 
             <h2>User Registration Page</h2>
-            <div>
+            <div class="form">
                 <div class="first-name">
                     <label>First Name</label>
                     <input type="text" placeholder="Enter your first name" name="fname" required>
@@ -88,7 +114,7 @@
                     <input type="email" placeholder="Enter your Email" name="email" required>
                 </div>
 
-                <button type="submit">Register Me!</button>
+                <button type="submit" class="butt">Register Me!</button></br>
                 <label>
                     <input type="checkbox" checked="checked" name="remember">Remember Me
                 </label>
