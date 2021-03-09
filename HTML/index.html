@@ -5,41 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
-    <link href="/CSS/site.css" rel="stylesheet" type="text/css">
+    <link href="/css/site.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="/HTML/sign.html">Sign-Up </a></li>
+                <li><a href="/html/sign.html">Sign-Up </a></li>
                 <li><a href="/">Home</a></li>
-                <li><a href="/HTML/user-list.html">Users</a></li>
+                <li><a href="/html/user-list.html">Users</a></li>
             </ul>
         </nav>
     </header>
     <main class="main-page">
         <div class="welcome">
             <h1 class="welcome-1">WELCOME!</h1>
-            <p class="welcome-2">We help to manage user records... Sign up NOW to <a href="/HTML/index.html">Get Started</a></p>            
+            <p class="welcome-2">We help to manage user records... Sign up NOW to <a href="/html/sign.html">Get Started</a></p>            
         </div>
         <div class="buttons">
-            <button class="reg-butt">Register</button>
-            <button class="log-butt">Log In</button>
+            <input type="button" class="reg-butt" onclick="location.href='/html/sign.html'" value="Register">
+            <input type="button" class="log-butt" onclick="location.href='/html/sign.html'" value="Log-In">
         </div>
     </main>
 
     <footer>
         <nav>
             <ul>
-                <li><a href="/HTML/sign.html">Sign-Up</a></li>
+                <li><a href="/html/sign.html">Sign-Up</a></li>
                 <li><a href="/">Home</a></li>
-                <li><a href="/HTML/user-list.html">Users</a></li>
+                <li><a href="/html/user-list.html">Users</a></li>
             </ul>
         </nav>
     </footer>
 </body>
 
 <script>
+    const reg = document.querySelector("welcome");
 
+    reg.addEventListener("click", buttonAction);
 </script>
 </html>
