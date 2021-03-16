@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
     <link href="/css/site.css" rel="stylesheet" type="text/css">
-
+    <script src="/js/sign-in.js"></script>
     <style>
         #image {
             width: 200px;
@@ -67,8 +67,8 @@
     <header>
         <nav>
             <ul>
-                <li><a href="/html/">Sign-Up</a></li>
                 <li><a href="/html/index.html">Home</a></li>
+                <li><a href="/html/">Sign-Up</a></li>                
                 <li><a href="/html/user-list.html">Users</a></li>
             </ul>
         </nav>
@@ -76,17 +76,22 @@
     <main class="main-page">
         <img src="/images/computer-users.png" id="image">
         
-        <form class="reg-form"> 
-            <h2>User Registration Page</h2>
+        <form method="POST" id="form1" class="reg-form" name="user-reg-form" onsubmit="return(validation());"> 
+            <h2>User Registration Page</h2> 
             <div class="form">
-                <div class="first-name">
-                    <label>First Name</label>
-                    <input type="text" placeholder="Enter your first name" name="fname" required>
+                <div class="name">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" name="name" required>
                 </div>
 
-                <div class="last-name">
-                    <label>Last Name</label>
-                    <input type="text" placeholder="Enter your last name" name="lname" required>
+                <div class="country">
+                    <label>Country</label>
+                    <input type="text" placeholder="Enter your country" name="country" required>
+                </div>
+
+                <div class="payment-date">
+                    <label>Payment Date</label>
+                    <input type="date" placeholder="Payment date" name="payment" required>
                 </div>
 
                 <div class="company-name">
@@ -99,26 +104,20 @@
                     <input type="text" placeholder="Enter your organization address" name="acompany" required>
                 </div>
 
-                <div class="address">
-                    <label>Home Address</label>
-                    <input type="text" placeholder="Enter your Home Address" name="home" required>
-                </div>
-
                 <div class="phone">
                     <label>Phone Number</label>
                     <input type="tel" placeholder="Enter your phone number" name="phone" required>
                 </div>
 
                 <div class="e-mail">
-                    <label>First Name</label>
+                    <label>Email</label>
                     <input type="email" placeholder="Enter your Email" name="email" required>
                 </div>
 
-                <button type="submit" class="butt">Register Me!</button></br>
+                <button type="submit" class="butt" onclick="SubmitForm()">Register Me!</button></br>
                 <label>
                     <input type="checkbox" checked="checked" name="remember">Remember Me
-                </label>
-                
+                </label>                
             </div>
         </form>>
     </main>
@@ -126,15 +125,37 @@
     <footer>
         <nav>
             <ul>
-                <li><a href="/html/">Sign-Up</a></li>
                 <li><a href="/html/index.html">Home</a></li>
+                <li><a href="/html/">Sign-Up</a></li>                
                 <li><a href="/html/user-list.html">Users</a></li>
             </ul>
         </nav>
     </footer>
 </body>
-
 <script>
+    window.addEventListener("DOMContentLoaded", function(e)){
+        const registerButton = document.querySelectorAll("button[type]");
 
+        registerButton.forEach(function(button){
+            button.addEventListener("click", function(e){
+                const button = e.currentTarget;
+                const container = button.parentNode;
+
+                const register = {
+                    id: button.getAttribute("type"),
+                    name: container.querySelector(".name").innerText,
+                    country: container.querySelector(".country").innerText,
+                    payment: container.querySelector(".payment-date").innerText,
+                    companyName: container.querySelector(".company-name").innerText,
+                    companyAddress: container.querySelector(".company-address").innerText,
+                    phone: container.querySelector(".phone").innerText,
+                    email: container.querySelector(".e-mail").innerText
+                }
+
+                localStorage.setItem("register", JSON.stringify(register));
+                
+            });
+        });        
+    }
 </script>
 </html>

@@ -5,29 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
-    <link href="/css/site.css" rel="stylesheet" type="text/css">
+    <link href="/css/user-list.css" rel="stylesheet" type="text/css">
+    <style>
+        section {
+            box-sizing: border-box;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="/html/sign.html">Sign-Up</a></li>
+            <ul class="topbar">
                 <li><a href="/html/index.html">Home</a></li>
+                <li><a href="/html/sign.html">Sign-Up</a></li>                
                 <li><a href="/">Users</a></li>
             </ul>
         </nav>
     </header>
+
     <main class="main-page">
-        <div class="">
-            
-        </div>
+        <section class="page">
+            <div class="second-layer">   
+                <p id="users">Users</p>
+                <input type="text" name="user-count" id="user-count">                
+                <input type="text" name="search-box" id="searchbox" placeholder="Search...">                
+                <button class="add-user"><a href="/html/sign.html">Add User</a></button>
+            </div>
+
+            <div class="table-div">
+                <span>
+                    <p>User Management</p>
+                </span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th># </th>
+                            <th>CUSTOMER</th>
+                            <th>COUNTRY</th>
+                            <th>PAYMENT DATE</th>
+                            <th>COMPANY NAME</th>
+                            <th>PHONE NUMBER</th>
+                            <th>ACTIONS</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Peace Bakare</td>
+                            <td>Nigeria</td>
+                            <td>10/03/2021</td>
+                            <td>Stransact</td>
+                            <td>08108015546</td>                            
+                        </tr>
+                    </thead>
+                </table>  
+            </div>  
+        </section>
     </main>
 
     <footer>
         <nav>
-            <ul>
-                <li><a href="/html/sign.html">Sign-Up</a></li>
+            <ul class="downbar">
                 <li><a href="/html/index.html">Home</a></li>
+                <li><a href="/html/sign.html">Sign-Up</a></li>                
                 <li><a href="/">Users</a></li>
             </ul>
         </nav>
@@ -35,6 +73,6 @@
 </body>
 
 <script>
-
+    
 </script>
 </html>

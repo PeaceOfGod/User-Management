@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script>
+          $(function () {
+    
+            $('form').on('submit', function (e) {
+    
+              e.preventDefault();
+              var form = $("form");
+
+                // you can't pass Jquery form it has to be javascript form object
+                var formData = new FormData(form[0]);
+
+                            //if you only need to upload files then
+                //Grab the File upload control and append each file manually to FormData
+                var files = form.find("#fileupload")[0].files;
+
+                $.each(files, function() {
+                 var file = $(this);
+                 formData.append(file[0].name, file[0]);
+                });
+              $.ajax({
+                type: 'POST',
+                url: 'http://localhost:50456/api/AssignRegulations/Upload/11',
+                data: formData,
+                enctype: 'multipart/form-data',
+                cache: false,
+                processData: false,
+                contentType: false,
+                beforeSend: function (xhr) {
+                    /* Authorization header */
+                    xhr.setRequestHeader("Authorization", "Bearer " + "nfjy8E1yciTkSIcTroboJRHCzAoHvefkow9jxj_1Bqv4KlAkY6eywvMCQNnTl9ilO_mOl0hKvC9f68OQZpr0AaYyrj_LhXTV-gBhll6ulbiw5ietmG8VlgE-szy5w5VE017x1oAUMmPtB4ws50l286wSqET1IR05xkF4oO_0QfCjIM0vJG8Olp_0hWFqAl0H2wgPhBqitGvet79RrWllt7a89mhXoOL2LZcTKldlVmIYINofhscfWIOFxQLyNdM4lf2HduGaJECko36BwIMRifGLuugSzOVEQQonGI3g-vbhiJdjgt0lgn3p4uKwlzzmwDdTK3wAhp6hqMn0Zp0awY_1Am8BJwnZ-IMO1ilg1Lg6Ejiw7IW0Qbzw57Rzoh9UTidicixpfDIiPVpugqyb5ZcMq7BIWJxpJ-5DOYuA_NtLysb0mH0hDMv3Fqm_IVW5zo7O2xYrJyJdJ3hkDEHVZ6pRRmM7KbdCvzdxmFvYJIJuBHeQolrsgDEgIBhTwUUS4xHKfS6GP7B5RML3G0pK23OaQqTwDjYE4KZ7VUaRLK65_1M8RERp0fP8OdESYvDw-sxqSBVMoiGQHgEuYSSgu_neDSbptYZ13nteG9vGVaI");
+                    xhr.setRequestHeader("X-Mobile", "false");
+                    console.log($('form').serialize())
+                    console.log(formData)
+                },
+                success: function (data) {
+                  alert(data);
+                },
+                error: function(err){
+                  alert(err);
+                }
+              });
+    
+            });
+    
+          });
+        </script>
+    </head>
+    <body>
+        <form  enctype="multipart/form-data" >
+            <input type="file" multiple id="fileupload" name="image">
+            <input value="tola" name="image2">
+            <input type="submit" value="Submit">
+          </form>
+    </body>
+</html>

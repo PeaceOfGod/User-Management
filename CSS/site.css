@@ -116,3 +116,13 @@ footer {
     background-color: #0af312;
     color: white;
   }
+
+  @media only screen and (min-height: 768px) {
+    main {
+        display: flex;
+    }
+
+    .columns-desktop {
+        display: flex;
+    }
+}
